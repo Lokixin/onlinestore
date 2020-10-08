@@ -12,7 +12,6 @@ const App = () => {
       <Header/>
       <main className="py-3">
         <Container className="text-left">
-          <h1>Welcome to Iravimart</h1>
           <Route path="/" component={HomeScreen} exact />
           <Route path="/product/:id" component={ProductScreen}/>
         </Container>
