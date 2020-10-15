@@ -22,7 +22,7 @@ const Header = () => {
                     <LinkContainer to="/cart" ><Nav.Link> <i className="fas fa-shopping-cart"></i> Cart</Nav.Link></LinkContainer>
                     {userInfo ? (
                         <NavDropdown title={userInfo.name} id='username'>
-                            <LinkContainer to='/prodfile'>
+                            <LinkContainer to='/profile'>
                                 <NavDropdown.Item>Profile</NavDropdown.Item>
                             </LinkContainer>
                             <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
