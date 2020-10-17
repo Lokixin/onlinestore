@@ -31,7 +31,7 @@ const CartScreen = ({ match, location, history }) => {
     }
 
     const checkoutHandler = () => {
-        history.push('/login?redirect=shippig')
+        history.push('/login?redirect=shipping')
     }
 
     return (
