@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {LinkContainer} from 'react-router-bootstrap'
-import { Navbar, Nav, NavDropdown, Button, Form, FormControl, Container} from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Container} from 'react-bootstrap'
 import {logout} from '../actions/userActions'
 
 const Header = () => {
