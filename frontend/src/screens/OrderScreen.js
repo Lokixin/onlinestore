@@ -13,11 +13,32 @@ const OrderScreen = ({ match }) => {
 
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
+  console.log(order)
 
-  
   useEffect(() => {
-    dispatch(getOrderDetails(orderId))
-  }, [])
+    if(!order || order._id !== orderId) {
+        dispatch(getOrderDetails(orderId))
+    }
+}, [order, orderId]) 
+
+
+
+  if (!loading) {
+    //   Calculate prices
+    const addDecimals = (num) => {
+      return (Math.round(num * 100) / 100).toFixed(2)
+    }
+    if (order&&order.orderItems) {
+        order.itemsPrice = addDecimals(
+            order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+          )
+    }
+    
+
+  }
+
+
+
 
   return loading ? (
     <Loader />
